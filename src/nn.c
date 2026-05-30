@@ -13,27 +13,27 @@ static inline double randf(double min, double max) {
     return r;
 }
 
-double nn_relu(double x) {
+static double nn_relu(double x) {
     return x > 0 ? x : 0.0;
 }
 
-double nn_drelu(double x) {
+static double nn_drelu(double x) {
     return x > 0 ? 1.0 : 0.0;
 }
 
-double nn_leaky_relu(double x) {
+static double nn_leaky_relu(double x) {
     return x > 0 ? x : x * 0.01;
 }
 
-double nn_dleaky_relu(double x) {
+static double nn_dleaky_relu(double x) {
     return x > 0 ? 1.0 : 0.01;
 }
 
-double nn_sigmoid(double x) {
+static double nn_sigmoid(double x) {
     return 1.0 / (1.0 + expf(-x));
 }
 
-double nn_dsigmoid(double x) {
+static double nn_dsigmoid(double x) {
     return x * (1.0 - x);
 }
 
